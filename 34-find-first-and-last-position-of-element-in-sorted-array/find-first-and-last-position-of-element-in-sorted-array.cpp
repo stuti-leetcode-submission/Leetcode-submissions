@@ -36,8 +36,8 @@ public:
     }
     vector<int> searchRange(vector<int>& nums, int target) {
         int lb=lb1(nums,target);
-          int ub=ub1(nums,target);
-      ub;
+        int ub=upper_bound(nums.begin(),nums.end(),target)-nums.begin();
+        ub--;
         if(lb==-1 || lb==nums.size() || ub==-1 || nums[lb]!=target || nums[ub]!=target)return {-1,-1};
         else return {lb,ub};
     }
